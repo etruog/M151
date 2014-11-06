@@ -4,7 +4,9 @@ session_start();
 define('MYSQL_HOST', "localhost"); 
 define('MYSQL_USER' ,"root"); 
 define('MYSQL_PW' ,""); 
-define('MYSQL_DB', "mvc_spirig"); 
+define('MYSQL_DB', "mvc_spirig");
+include_once('./lib/Database_Class.php');
+$DB = new DBHandler();
 //beispiel Hyperlink 
 //   index.php?show=index 
 function application_loader ($ControllerName){ 

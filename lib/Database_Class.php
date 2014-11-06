@@ -4,18 +4,20 @@ define( 'DBLOGIN', 'root' );
 define( 'DBPW', '' );  
 define( 'DBNAME', 'myDB' );  
 
+
+
 class DBHandler
 {
 	public $connection = NULL;
 	public $results = NULL;
 	private $sqlStr = NULL;
 	
-	public function _construct()
+	public function __construct()
 	{
 		$this->connection();
 	}
 	
-	public static function connection()
+	public function connection()
 	{
 		$this->connection = new mysqli(DBSRV, DBLOGIN, DBPW, DBNAME);
 		if($this->connection->connect_errno)
@@ -47,10 +49,18 @@ class DBHandler
 	
 	public function getData($sql)
 	{
-		$this->$results = $this->connection->query($sql);
+		
 	}
 	
+	public function search()
+	{
+		
+	}
 	
+	public function newUser($Username, $Passwordd)
+	{
+		//$this->
+	}
 	
 	
 	
