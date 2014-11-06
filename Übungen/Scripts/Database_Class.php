@@ -31,6 +31,18 @@ class DBHandler
 		$this->sqlStr = "CREATE DATABASE IF NOT EXISTS " . DBNAME;
 		$this->connection->query($this->sqlStr);
 		$this->connection->select_db(DBNAME);
+		$this->sqlstr = "CREATE TABLE IF NOT EXISTS  users 
+                ( 
+                uID int NOT NULL AUTO_INCREMENT, 
+                PRIMARY KEY (uID), 
+                loginname VARCHAR(15), 
+                loginpass VARCHAR(100) 
+                )"; 
+      	$this->sqlStr = "INSERT INTO users 
+                (loginname, loginpass) 
+                VALUES 
+                ('admin',  '1234')"; 
+                $this->_con->query($sqlstr);
 	}
 	
 	
